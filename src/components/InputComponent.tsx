@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-function InputComponent({ addItem }) {
+interface Props {
+  addItem: (item: string) => void;
+}
+function InputComponent({ addItem }: Props) {
   const [inputVal, setInputVal] = useState("");
 
   const handleClick = () => {
@@ -14,7 +17,7 @@ function InputComponent({ addItem }) {
         value={inputVal}
         onChange={(e) => setInputVal(e.target.value)}
       />
-      <button onClick={handleClick()}>Add anime</button>
+      <button onClick={handleClick}>Add anime</button>
     </div>
   );
 }
